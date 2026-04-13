@@ -1,53 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best TV</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; background-color: #1a1a1a; color: white; padding: 20px; }
-        .channel-card { background: #333; margin: 10px auto; padding: 15px; border-radius: 10px; max-width: 400px; border: 1px solid #444; }
-        button { background-color: #e50914; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
-        a { display: inline-block; margin-top: 10px; color: #00dfc0; text-decoration: none; font-weight: bold; }
-        #channels { margin-top: 20px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best TV</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+}
+
+.channel-card {
+    background: #333;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 400px;
+    border: 1px solid #444;
+}
+
+button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00dfc0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#channels {
+    margin-top: 20px;
+}
+</style>
 </head>
+
 <body>
 
-    <h1>📺 Best TV</h1>
-    <button onclick="load()">Load Channels</button>
+<h1>📺 Best TV</h1>
+<button onclick="load()">Load Channels</button>
 
-    <div id="channels"></div>
+<div id="channels"></div>
 
-    <script>
-    async function load() {
-        const container = document.getElementById("channels");
-        container.innerHTML = "Loading...";
+<script>
+async function load() {
+    const container = document.getElementById("channels");
+    container.innerHTML = "Loading...";
 
-        try {
-            const res = await fetch("https://gist.githubusercontent.com/hama77/ba9f9ceef8bf9ccef211579ef2a73f96/raw/channels.json");
-            
-            if (!res.ok) throw new Error("Connection failed");
+    try {
+        const res = await fetch("https://gist.githubusercontent.com/hama77/ba9f9ceef8bf9ccef211579ef2a73f96/raw/9bee3652423c5f3c9350091cfdbc5ce80f78d4ac/channels.json");
 
-            const data = await res.json();
-            container.innerHTML = "";
+        if (!res.ok) throw new Error("Connection failed");
 
-            data.forEach(item => {
-                const div = document.createElement("div");
-                div.className = "channel-card";
-                div.innerHTML = `
-                    <h3>${item.name}</h3>
-                    <a href="${item.url}" target="_blank">▶ Play Now</a>
-                `;
-                container.appendChild(div);
-            });
+        const data = await res.json();
+        container.innerHTML = "";
 
-        } catch (error) {
-            container.innerHTML = "❌ Error: Check your link or internet connection";
-            console.error(error);
-        }
+        data.forEach(function(item) {
+            const div = document.createElement("div");
+            div.className = "channel-card";
+
+            div.innerHTML =
+                "<h3>" + item.name + "</h3>" +
+                '<a href="' + item.url + '" target="_blank">▶ Play Now</a>';
+
+            container.appendChild(div);
+        });
+
+    } catch (error) {
+        container.innerHTML = "❌ Error loading channels";
+        console.error(error);
     }
-    </script>
+}
+</script>
 
 </body>
 </html>
