@@ -24,6 +24,16 @@ export default function handler(req, res) {
 
   const encrypted = encrypt(jsonData);
 
+  // Test logs
+  console.log("Encrypted:", encrypted);
+  console.log("Decrypted:", decrypt(encrypted));
+
+  // Manual test with your provided string
+  console.log(
+    "Test Decrypt:",
+    decrypt("8bTxvZtWpRzmTUooZl3rEcIOkrI8cyeNoB5Rs7e+8c=")
+  );
+
   res.setHeader("Content-Type", "text/plain");
   res.status(200).send(encrypted);
 }
