@@ -1,18 +1,12 @@
 import crypto from "crypto";
 
-const KEY = Buffer.from("KMdaF2HeNUT0ye6N3LvF0Mso", "utf8"); 
-const IV = Buffer.from("45760761", "utf8"); // لا تعمل pad هنا
+const KEY = Buffer.from("KMdaF2HeNUT0ye6N3LvF0Mso"); // 24 bytes
+const IV = Buffer.from("45760761".padEnd(16, "0")); // 16 bytes
 
 function encrypt(text) {
-  const cipher = crypto.createCipheriv(
-    "aes-128-cbc", // مهم جدًا
-    KEY.slice(0, 16), // 16 bytes فقط
-    IV
-  );
-
+  const cipher = crypto.createCipheriv("aes-192-cbc", KEY, IV);
   let encrypted = cipher.update(text, "utf8", "base64");
   encrypted += cipher.final("base64");
-
   return encrypted;
 }
 
