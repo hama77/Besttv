@@ -2,12 +2,14 @@ package com.your.app;
 
 public class Config {
 
-    public static final String API_GET_TIME = "https://besttv-424r.vercel.app/api/getTime";
-    public static final String API_USER_BALANCE = "https://besttv-424r.vercel.app/api/getUserBalance";
-    public static final String API_RENEWAL = "https://besttv-424r.vercel.app/api/getBesttvRen";
-    public static final String API_PAY_ORDER = "https://besttv-424r.vercel.app/api/payBesttvOrder";
-    public static final String API_SET_PASSWORD = "https://besttv-424r.vercel.app/api/setPayment";
+    // These endpoints are matched to your actual file names and Vercel structure
+    public static final String API_GET_TIME = "https://besttv-424r.vercel.app/api/getTime.js";
+    public static final String API_USER_BALANCE = "https://besttv-424r.vercel.app/api/getUserBalance.js";
+    public static final String API_RENEWAL = "https://besttv-424r.vercel.app/api/getBesttvRen.js";
+    public static final String API_PAY_ORDER = "https://besttv-424r.vercel.app/api/payBesttvOrder.js";
+    public static final String API_SET_PASSWORD = "https://besttv-424r.vercel.app/api/setPayment.js";
 
+    // GitHub DEX URLs
     public static final String DEX_URL_1 = "https://raw.githubusercontent.com/hama77/Besttv/main/dex/module1.dex";
     public static final String DEX_URL_2 = "https://raw.githubusercontent.com/hama77/Besttv/main/dex/module2.dex";
 
