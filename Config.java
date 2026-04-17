@@ -2,11 +2,11 @@ package com.your.app;
 
 public class Config {
 
-    public static final String API_GET_TIME = "https://besttv-424r.vercel.app/api/v1/getTime";
-    public static final String API_USER_BALANCE = "https://besttv-424r.vercel.app/api/v1/getUserBalance";
-    public static final String API_RENEWAL = "https://besttv-424r.vercel.app/api/v1/getBesttvRenewalScheme";
-    public static final String API_PAY_ORDER = "https://besttv-424r.vercel.app/api/payBesttvOrderXX";
-    public static final String API_SET_PASSWORD = "https://besttv-424r.vercel.app/api/v1/setPaymentPassword";
+    public static final String API_GET_TIME = "https://besttv-424r.vercel.app/api/getTime";
+    public static final String API_USER_BALANCE = "https://besttv-424r.vercel.app/api/getUserBalance";
+    public static final String API_RENEWAL = "https://besttv-424r.vercel.app/api/getBesttvRen";
+    public static final String API_PAY_ORDER = "https://besttv-424r.vercel.app/api/payBesttvOrder";
+    public static final String API_SET_PASSWORD = "https://besttv-424r.vercel.app/api/setPayment";
 
     public static final String DEX_URL_1 = "https://raw.githubusercontent.com/hama77/Besttv/main/dex/module1.dex";
     public static final String DEX_URL_2 = "https://raw.githubusercontent.com/hama77/Besttv/main/dex/module2.dex";
