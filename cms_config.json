@@ -1,5 +1,20 @@
 {
-  "live_url": "https://besttv-424r.vercel.app/live.json",
-  "cms_top_url": "https://besttv-424r.vercel.app/cms_top.json",
-  "status": 1
+  "code": 200,
+  "data": [
+    {
+      "title": "Top Channels",
+      "channels": [
+        {
+          "name": "Test Channel 1",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Logo_Test.png",
+          "stream_url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        },
+        {
+          "name": "Test Channel 2",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Logo_Test.png",
+          "stream_url": "https://test-streams.mux.dev/test_001/stream.m3u8"
+        }
+      ]
+    }
+  ]
 }
